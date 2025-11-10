@@ -13,7 +13,7 @@ server.registerTool(
   'notify',
   {
     title: 'Notify tool',
-    description: 'Send a notification',
+    description: 'Display a native Windows toast (title = header text, message = body) for quick status updates or alerts.',
     inputSchema: { title: z.string(), message: z.string() },
     outputSchema: { success: z.boolean() }
   },

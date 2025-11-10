@@ -7,7 +7,7 @@ Lightweight MCP server that exposes `/mcp` on Windows (and via WSL bridge) so an
 - Makes custom MCP tools trivial to add by keeping logic in `server.ts`.
 
 ## Tools
-- `notify`: Pops a native Windows toast. Inputs: `title` (header) and `message` (body). Output: `{ "success": boolean }`.
+- `notify`: Pops a native Windows toast for quick status updates or alerts. Inputs: `title` (toast header text) and `message` (body text). Output: `{ "success": boolean }`.
 
 ## How to use
 ### MCP Server (Windows)
