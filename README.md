@@ -16,18 +16,21 @@ Lightweight MCP server that exposes `/mcp` on Windows (and via WSL bridge) so an
 git clone https://github.com/Hamachi-Multi/windows-notification-server.git
 cd windows-notification-server
 ```
+
 2. Install dependencies
 ```
 pnpm install
 # or
 npm install
 ```
+
 3. Install `tsx` (if it's not already available)
 ```
 pnpm add -D tsx
 # or
 npm install --save-dev tsx
 ```
+
 4. Run MCP Server
 ```
 npx -y tsx server.ts
@@ -38,14 +41,20 @@ npx -y tsx server.ts
 ```
 echo $(hostname)
 ```
-2. Configure your agent (~/.codex/config.toml, see the [Codex streamable HTTP docs](https://github.com/openai/codex/blob/main/docs/config.md#streamable-http))
+
+2. Configure your agent MCP (~/.codex/config.toml, see the [Codex streamable HTTP docs](https://github.com/openai/codex/blob/main/docs/config.md#streamable-http))
 ```
 [mcp_servers.notification]
 url = "http://[HOSTNAME].local:3000/mcp"
 http_headers = { "accept" = "application/json, text/event-stream", "content-type" = "application/json" }
 ```
 
-3. Start the agent
+3. Configure your agnet instructions (AGENTS.md)
+```
+`Use the notification MCP server's notify tool at the beginning and end of each task.`
+```
+
+4. Start the agent
 ```
 codex
 ```
